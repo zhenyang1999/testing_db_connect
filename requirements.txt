@@ -1,0 +1,8 @@
+logging-config==1.0.4
+numpy==1.26.2
+openpyxl==3.1.2
+pandas==2.1.4
+streamlit==1.29.0
+streamlit-option-menu==0.3.6
+streamlit-ext==0.1.9
+mariadb==1.0.7
