@@ -2,7 +2,7 @@ import pymysql
 import sys
 import pandas as pd
 import streamlit as st
-import MYSQLdb
+import mysqldb
 
 st.title('testing dataframe')
 
