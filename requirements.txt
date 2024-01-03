@@ -6,4 +6,5 @@ streamlit==1.29.0
 streamlit-option-menu==0.3.6
 PyMySQL==1.0.2
 sqlalchemy
+pkg-config
 mysqlclient
