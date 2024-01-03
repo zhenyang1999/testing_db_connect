@@ -21,5 +21,6 @@ st.title('testing dataframe')
 #     return pd.read_sql( st.secrets.db_query.query_1 , con= conn)
 
 conn = st.connection("mydb", type="sql", autocommit=True)
+df = pd.read_sql( st.secrets.db_query.query_1 , con= conn)
+st.dataframe(df.head(10))
 st.write('Done')
-#st.dataframe(df.head(10))
