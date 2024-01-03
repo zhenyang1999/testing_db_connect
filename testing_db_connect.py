@@ -5,11 +5,11 @@ import streamlit as st
 
 st.title('testing dataframe')
 
-# Connect to MariaDB
+# # Connect to MariaDB
 
-@st.cache_resource
-def init_connection():
-    return pymysql.connect(user=st.secrets.db_credentials.user,password=st.secrets.db_credentials.password,host=st.secrets.db_credentials.host,port=st.secrets.db_credentials.port,database=st.secrets.db_credentials.database)
+# @st.cache_resource
+# def init_connection():
+#     return pymysql.connect(user=st.secrets.db_credentials.user,password=st.secrets.db_credentials.password,host=st.secrets.db_credentials.host,port=st.secrets.db_credentials.port,database=st.secrets.db_credentials.database)
 
 
 # Get Cursor
@@ -19,6 +19,6 @@ def init_connection():
 # def query():
 #     return pd.read_sql( st.secrets.db_query.query_1 , con= conn)
 
-conn = init_connection()
+conn = st.connection("mydb", type="sql", autocommit=True)
 st.write('Done')
 #st.dataframe(df.head(10))
