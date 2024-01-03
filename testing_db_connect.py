@@ -9,7 +9,7 @@ st.title('testing dataframe')
 
 @st.cache_resource
 def init_connection():
-    return pymysql.connect(user=st.secrets.db_credentials.user,password=st.secrets.db_credentials.password,host=st.secrets.db_credentials.host,port=st.secrets.db_credentials.port,db=st.secrets.db_credentials.database)
+    return pymysql.connect(user=st.secrets.db_credentials.user,password=st.secrets.db_credentials.password,host=st.secrets.db_credentials.host,port=st.secrets.db_credentials.port,database=st.secrets.db_credentials.database)
 
 
 # Get Cursor
