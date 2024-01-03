@@ -20,16 +20,14 @@ st.title('testing dataframe')
 # def query():
 #     return pd.read_sql( st.secrets.db_query.query_1 , con= conn)
 
-@st.cache_resource
-def init_connection():
-  return st.connection("mydb", type="sql", autocommit=True)
-
 @st.cache_data
-def query(conn):
-  return conn.query( st.secrets.db_query.query_1)
+def query():
+  conn = st.connection("mydb", type="sql", autocommit=True)
+  df = conn.query( st.secrets.db_query.query_1)
+  return df
 
-conn = init_connection()
-df = query(conn)
+
+df = query()
 
 st.dataframe(df.head(10))
 st.write('Done')
