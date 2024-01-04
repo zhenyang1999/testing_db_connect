@@ -13,7 +13,7 @@ import streamlit as st
 @st.cache_resource
 def init_connection():
     return pyodbc.connect(
-        "DRIVER={ODBC Driver 17 for SQL Server};SERVER="
+        "DRIVER={/opt/microsoft/msodbcsql17/lib64/libmsodbcsql-17.7.so.1.1};SERVER="
         + st.secrets.db_mssql.SERVER
         + ";DATABASE="
         + st.secrets.db_mssql.DATABASE
