@@ -50,5 +50,5 @@ watchdog==3.0.0
 zipp==3.17.0
 mysqlclient
 SQLAlchemy
-pyodbc==5.0.1
+pyodbc
 
