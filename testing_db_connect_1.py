@@ -4,6 +4,7 @@ import pandas as pd
 import streamlit as st
 import os
 
+st.title('testing dataframe')
 
 # Connect to MariaDB
 try:
@@ -26,7 +27,6 @@ except pymysql.Error as e:
 def query():
     return pd.read_sql( "SELECT * FROM Teltonika_ALLCAN300_Supported_List", con= conn)
 
-st.title('testing dataframe')
 df = query()
 st.dataframe(df.head(10))
 
