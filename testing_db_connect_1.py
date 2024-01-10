@@ -2,15 +2,17 @@ import pymysql
 import sys
 import pandas as pd
 import streamlit as st
+import os
+
 
 # Connect to MariaDB
 try:
     conn = pymysql.connect(
-        user=st.secrets.db_credentials.user,
-        password=st.secrets.db_credentials.password,
-        host=st.secrets.db_credentials.host,
-        port=st.secrets.db_credentials.port,
-        db=st.secrets.db_credentials.database
+        user="datauser",
+        password=os.environ.get('password'),
+        host="192.168.9.230",
+        port=3306,
+        db="DataAnalytics"
 
     )
 except pymysql.Error as e:
@@ -22,7 +24,7 @@ except pymysql.Error as e:
 
 @st.cache_data
 def query():
-    return pd.read_sql( st.secrets.db_query.query_1 , con= conn)
+    return pd.read_sql( "SELECT * FROM Teltonika_ALLCAN300_Supported_List", con= conn)
 
 st.title('testing dataframe')
 df = query()
